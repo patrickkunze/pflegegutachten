@@ -1,0 +1,204 @@
+openapi: 3.1.0
+info:
+  title: PflegeGutachtenGPT
+  version: '1.0'
+  description: Automatisch generierte API für strukturierte Pflegegutachtenmodule
+servers:
+- url: https://patrickkunze.github.io/pflegegutachten/schemas/
+  description: Bereitgestellte Pflegebegutachtungs-Schemata
+paths:
+  /use_F4_6_DailyLifeSocialContacts.schema:
+    post:
+      summary: 'F4.6 – Modul 6: Gestaltung des Alltagslebens und sozialer Kontakte'
+      operationId: use_F4_6_DailyLifeSocialContacts.schema
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: ./modules/F4_6_DailyLifeSocialContacts.schema.json
+      responses:
+        '200':
+          description: Antwort zu F4_6_DailyLifeSocialContacts.schema
+  /use_F4_1_Mobility.schema:
+    post:
+      summary: 'F4.1 – Modul 1: Mobilität'
+      operationId: use_F4_1_Mobility.schema
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: ./modules/F4_1_Mobility.schema.json
+      responses:
+        '200':
+          description: Antwort zu F4_1_Mobility.schema
+  /use_F4_2_CognitionCommunication.schema:
+    post:
+      summary: 'F4.2 – Modul 2: Kognitive und kommunikative Fähigkeiten'
+      operationId: use_F4_2_CognitionCommunication.schema
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: ./modules/F4_2_CognitionCommunication.schema.json
+      responses:
+        '200':
+          description: Antwort zu F4_2_CognitionCommunication.schema
+  /use_F1_PreviousCareSituation.schema:
+    post:
+      summary: F1 – Pflegerelevante Vorgeschichte und derzeitige Versorgungssituation
+      operationId: use_F1_PreviousCareSituation.schema
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: ./modules/F1_PreviousCareSituation.schema.json
+      responses:
+        '200':
+          description: Antwort zu F1_PreviousCareSituation.schema
+  /use_F3_Diagnosis.schema:
+    post:
+      summary: F3 – Pflegebegründende Diagnosen
+      operationId: use_F3_Diagnosis.schema
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: ./modules/F3_Diagnosis.schema.json
+      responses:
+        '200':
+          description: Antwort zu F3_Diagnosis.schema
+  /use_F4_Modules.schema:
+    post:
+      summary: F4 – Module des Begutachtungsinstruments
+      operationId: use_F4_Modules.schema
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: ./modules/F4_Modules.schema.json
+      responses:
+        '200':
+          description: Antwort zu F4_Modules.schema
+  /use_F4_3_BehavioralIssues.schema:
+    post:
+      summary: 'F4.3 – Modul 3: Verhaltensweisen und psychische Problemlagen'
+      operationId: use_F4_3_BehavioralIssues.schema
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: ./modules/F4_3_BehavioralIssues.schema.json
+      responses:
+        '200':
+          description: Antwort zu F4_3_BehavioralIssues.schema
+  /use_F7_Recommendations.schema:
+    post:
+      summary: F7 – Empfehlungen zur Förderung oder zum Erhalt der Selbständigkeit
+      operationId: use_F7_Recommendations.schema
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: ./modules/F7_Recommendations.schema.json
+      responses:
+        '200':
+          description: Antwort zu F7_Recommendations.schema
+  /use_F2_Findings.schema:
+    post:
+      summary: F2 – Gutachterlicher Befund
+      operationId: use_F2_Findings.schema
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: ./modules/F2_Findings.schema.json
+      responses:
+        '200':
+          description: Antwort zu F2_Findings.schema
+  /use_F9_Prognosis.schema:
+    post:
+      summary: F9 – Prognose / Wiederholungsbegutachtung
+      operationId: use_F9_Prognosis.schema
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: ./modules/F9_Prognosis.schema.json
+      responses:
+        '200':
+          description: Antwort zu F9_Prognosis.schema
+  /use_F4_4_SelfCare.schema:
+    post:
+      summary: 'F4.4 – Modul 4: Selbstversorgung'
+      operationId: use_F4_4_SelfCare.schema
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: ./modules/F4_4_SelfCare.schema.json
+      responses:
+        '200':
+          description: Antwort zu F4_4_SelfCare.schema
+  /use_F6_AdditionalNeeds.schema:
+    post:
+      summary: F6 – Weitere versorgungsrelevante Informationen
+      operationId: use_F6_AdditionalNeeds.schema
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: ./modules/F6_AdditionalNeeds.schema.json
+      responses:
+        '200':
+          description: Antwort zu F6_AdditionalNeeds.schema
+  /use_F5_AssessmentResult.schema:
+    post:
+      summary: F5 – Ergebnis der Begutachtung
+      operationId: use_F5_AssessmentResult.schema
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: ./modules/F5_AssessmentResult.schema.json
+      responses:
+        '200':
+          description: Antwort zu F5_AssessmentResult.schema
+  /use_F4_5_TherapyManagement.schema:
+    post:
+      summary: 'F4.5 – Modul 5: Krankheits- oder therapiebedingte Anforderungen'
+      operationId: use_F4_5_TherapyManagement.schema
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: ./modules/F4_5_TherapyManagement.schema.json
+      responses:
+        '200':
+          description: Antwort zu F4_5_TherapyManagement.schema
+  /use_F8_InsuranceAdvice.schema:
+    post:
+      summary: F8 – Weitere Empfehlungen und Hinweise für die Pflegekasse
+      operationId: use_F8_InsuranceAdvice.schema
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: ./modules/F8_InsuranceAdvice.schema.json
+      responses:
+        '200':
+          description: Antwort zu F8_InsuranceAdvice.schema
