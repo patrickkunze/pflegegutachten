@@ -1,0 +1,57 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "F4.1 – Modul 1: Mobilität",
+  "type": "object",
+  "description": "Bewertung der Selbständigkeit in Bezug auf motorische Mobilität",
+  "properties": {
+    "positionswechselImBett": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 3,
+      "description": "F4.1.1 Positionswechsel im Bett: 0 = selbständig, 1 = überwiegend selbständig, 2 = überwiegend unselbständig, 3 = unselbständig"
+    },
+    "sitzpositionHalten": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 3,
+      "description": "F4.1.2 Halten einer stabilen Sitzposition: Bewertung wie oben"
+    },
+    "umsetzen": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 3,
+      "description": "F4.1.3 Umsetzen zwischen Sitzgelegenheiten: Bewertung wie oben"
+    },
+    "fortbewegenWohnbereich": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 3,
+      "description": "F4.1.4 Fortbewegen innerhalb des Wohnbereichs: Bewertung wie oben"
+    },
+    "treppensteigen": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 3,
+      "description": "F4.1.5 Treppensteigen: Bewertung wie oben"
+    },
+    "besondereBedarfskonstellation": {
+      "type": "object",
+      "description": "F4.1.B Besondere Bedarfskonstellation gemäß §15 Abs. 4 SGB XI",
+      "properties": {
+        "liegtVor": { "type": "boolean", "description": "Gebrauchsunfähigkeit beider Arme und beider Beine vorhanden?" },
+        "beschreibung": {
+          "type": "string",
+          "description": "Freitext zur Beschreibung der besonderen Bedarfskonstellation (z. B. Tetraplegie, Wachkoma)"
+        }
+      },
+      "required": ["liegtVor"]
+    }
+  },
+  "required": [
+    "positionswechselImBett",
+    "sitzpositionHalten",
+    "umsetzen",
+    "fortbewegenWohnbereich",
+    "treppensteigen"
+  ]
+}

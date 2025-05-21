@@ -1,0 +1,52 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "F4.5 – Modul 5: Krankheits- oder therapiebedingte Anforderungen",
+  "type": "object",
+  "description": "Erfassung und Bewertung medizinischer Maßnahmen und des Umgangs mit krankheitsbedingten Anforderungen.",
+  "properties": {
+    "medikation": { "type": "string", "description": "F4.5.1 – z. B. 'selbständig', 'entfällt', '2x täglich', '14x wöchentlich'" },
+    "injektionen": { "type": "string", "description": "F4.5.2 – Subkutane/IM Injektionen" },
+    "ivZugangVersorgung": { "type": "string", "description": "F4.5.3 – Port, Shaldon, Broviac, etc." },
+    "sauerstoffgabeOderAbsaugen": { "type": "string", "description": "F4.5.4 – Sauerstoffgabe, Absaugen" },
+    "einreibungenWaermeKaelte": { "type": "string", "description": "F4.5.5 – Einreibungen, Kälte-/Wärmeanwendungen" },
+    "koerpermessungUndDeutung": { "type": "string", "description": "F4.5.6 – Blutdruck, Blutzucker, etc." },
+    "koerpernaheHilfsmittel": { "type": "string", "description": "F4.5.7 – Hörgeräte, Kompressionsstrümpfe, Prothesen" },
+    "wundversorgung": { "type": "string", "description": "F4.5.8 – Verbände, Dekubitus, chronische Wunden" },
+    "stomaversorgung": { "type": "string", "description": "F4.5.9 – PEG, Tracheostoma, suprapubischer Katheter etc." },
+    "einmalkatheterOderAbfuehrmethoden": { "type": "string", "description": "F4.5.10 – Klistier, Katheter, Einläufe" },
+    "eigenuebungenOderDialyse": { "type": "string", "description": "F4.5.11 – CAPD, Bobath, Atemtherapie etc." },
+    "zeitintensiveTherapien": { "type": "string", "description": "F4.5.12 – z. B. invasive Beatmung zu Hause, Hämodialyse" },
+    "arztbesuche": { "type": "string", "description": "F4.5.13 – Regelmäßige Arztbesuche, Hilfe erforderlich?" },
+    "kurzeTherapieBesuche": { "type": "string", "description": "F4.5.14 – Besuche < 3 Std. (z. B. Physio, Logopädie)" },
+    "langeTherapieBesuche": { "type": "string", "description": "F4.5.15 – Besuche > 3 Std. inkl. Fahrtzeit" },
+    "verhaltensvorschriftenEinhaltung": {
+      "type": "string",
+      "enum": [
+        "selbständig",
+        "überwiegend selbständig",
+        "überwiegend unselbständig",
+        "unselbständig",
+        "entfällt, nicht erforderlich"
+      ],
+      "description": "F4.5.16 – Einhalten ärztlich angeordneter Diäten/Vorgaben"
+    }
+  },
+  "required": [
+    "medikation",
+    "injektionen",
+    "ivZugangVersorgung",
+    "sauerstoffgabeOderAbsaugen",
+    "einreibungenWaermeKaelte",
+    "koerpermessungUndDeutung",
+    "koerpernaheHilfsmittel",
+    "wundversorgung",
+    "stomaversorgung",
+    "einmalkatheterOderAbfuehrmethoden",
+    "eigenuebungenOderDialyse",
+    "zeitintensiveTherapien",
+    "arztbesuche",
+    "kurzeTherapieBesuche",
+    "langeTherapieBesuche",
+    "verhaltensvorschriftenEinhaltung"
+  ]
+}

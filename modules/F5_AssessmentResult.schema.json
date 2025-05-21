@@ -1,0 +1,87 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "F5 – Ergebnis der Begutachtung",
+  "type": "object",
+  "description": "Zusammenfassung der Begutachtungsergebnisse, Pflegegradermittlung und sozialmedizinische Beurteilungen.",
+  "properties": {
+    "pflegegrad": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 5,
+      "description": "Festgestellter Pflegegrad gemäß §15 SGB XI"
+    },
+    "gesamtpunktzahl": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100,
+      "description": "Ermittelter Gesamtpunktwert (0 – 100)"
+    },
+    "berechneteModulpunkte": {
+      "type": "object",
+      "description": "Gewichtete Punktwerte aus Modulen 1–6",
+      "properties": {
+        "modul1_mobilitaet": { "type": "number" },
+        "modul2_kognition_kommunikation": { "type": "number" },
+        "modul3_verhalten_psychisch": { "type": "number" },
+        "modul4_selbstversorgung": { "type": "number" },
+        "modul5_therapieumgang": { "type": "number" },
+        "modul6_alltag_soziales": { "type": "number" }
+      }
+    },
+    "auswahlModul2oder3": {
+      "type": "string",
+      "enum": ["Modul 2", "Modul 3"],
+      "description": "Welches Modul (2 oder 3) ging als höher gewichteter Wert in die Gesamtbewertung ein?"
+    },
+    "besondererBedarf": {
+      "type": "boolean",
+      "description": "Liegt eine besondere Bedarfskonstellation nach F4.1.B vor (z. B. Tetraplegie, Wachkoma)?"
+    },
+    "pflegegradSeit": {
+      "type": "string",
+      "format": "date",
+      "description": "Seit wann liegt die Pflegebedürftigkeit in dieser Ausprägung vor?"
+    },
+    "pflegegradBefristung": {
+      "type": "boolean",
+      "description": "Empfehlung einer befristeten Leistungszusage?"
+    },
+    "sicherungDerPflege": {
+      "type": "string",
+      "enum": ["ja", "nein", "eingeschränkt", "nicht beurteilt"],
+      "description": "Ist die Pflege in geeigneter Weise sichergestellt?"
+    },
+    "pflegepersonAufwand": {
+      "type": "object",
+      "description": "Ermittlung des wöchentlichen Pflegeaufwands der Pflegeperson(en)",
+      "properties": {
+        "liegtVor": { "type": "boolean" },
+        "stundenProWoche": { "type": "number" },
+        "tageProWoche": { "type": "integer" },
+        "mehrfachpflege": { "type": "boolean" },
+        "kommentar": { "type": "string" }
+      }
+    },
+    "verursachungPflegebeduerftigkeit": {
+      "type": "array",
+      "description": "Hinweise auf Ursachen der Pflegebedürftigkeit",
+      "items": {
+        "type": "string",
+        "enum": [
+          "Unfallfolge",
+          "Berufskrankheit",
+          "Arbeitsunfall",
+          "Versorgungsleiden (z. B. Kriegs-/Wehrdienst-/Impfschaden)"
+        ]
+      }
+    }
+  },
+  "required": [
+    "pflegegrad",
+    "gesamtpunktzahl",
+    "auswahlModul2oder3",
+    "besondererBedarf",
+    "pflegegradSeit",
+    "sicherungDerPflege"
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "F4.4 – Modul 4: Selbstversorgung",
+  "type": "object",
+  "description": "Bewertung der Selbständigkeit bei Körperpflege, Ernährung, Ausscheidung und Umgang mit Hilfsmitteln.",
+  "properties": {
+    "waschenVordererOberkoerper": { "type": "integer", "minimum": 0, "maximum": 3 },
+    "koerperpflegeKopf": { "type": "integer", "minimum": 0, "maximum": 3 },
+    "intimpflege": { "type": "integer", "minimum": 0, "maximum": 3 },
+    "duschenBaden": { "type": "integer", "minimum": 0, "maximum": 3 },
+    "ankleidenOberkoerper": { "type": "integer", "minimum": 0, "maximum": 3 },
+    "ankleidenUnterkoerper": { "type": "integer", "minimum": 0, "maximum": 3 },
+    "nahrungZubereiten": { "type": "integer", "minimum": 0, "maximum": 3 },
+    "essen": { "type": "integer", "minimum": 0, "maximum": 3 },
+    "trinken": { "type": "integer", "minimum": 0, "maximum": 3 },
+    "toilettengang": { "type": "integer", "minimum": 0, "maximum": 3 },
+    "harnkontinenzBewältigung": { "type": "integer", "minimum": 0, "maximum": 3 },
+    "stuhlkontinenzBewältigung": { "type": "integer", "minimum": 0, "maximum": 3 },
+
+    "parenteraleOderSondenernaehrung": {
+      "type": "string",
+      "enum": [
+        "selbständig",
+        "nicht täglich, nicht auf Dauer",
+        "täglich zusätzlich zu oraler Ernährung",
+        "ausschließlich oder nahezu ausschließlich"
+      ],
+      "description": "F4.4.13 – Art der Ernährung über Port, PEG, PEJ oder Sonde"
+    },
+
+    "harnkontinenzStatus": {
+      "type": "string",
+      "enum": [
+        "ständig kontinent",
+        "überwiegend kontinent",
+        "überwiegend inkontinent",
+        "komplett inkontinent",
+        "Dauerkatheter/Urostoma"
+      ],
+      "description": "Bewertung Harnkontinenz oder alternative Versorgung"
+    },
+
+    "stuhlkontinenzStatus": {
+      "type": "string",
+      "enum": [
+        "ständig kontinent",
+        "überwiegend kontinent",
+        "überwiegend inkontinent",
+        "komplett inkontinent",
+        "Ileostoma/Colostoma"
+      ],
+      "description": "Bewertung Stuhlkontinenz oder alternative Versorgung"
+    }
+  },
+  "required": [
+    "waschenVordererOberkoerper",
+    "koerperpflegeKopf",
+    "intimpflege",
+    "duschenBaden",
+    "ankleidenOberkoerper",
+    "ankleidenUnterkoerper",
+    "nahrungZubereiten",
+    "essen",
+    "trinken",
+    "toilettengang",
+    "harnkontinenzBewältigung",
+    "stuhlkontinenzBewältigung",
+    "parenteraleOderSondenernaehrung",
+    "harnkontinenzStatus",
+    "stuhlkontinenzStatus"
+  ]
+}

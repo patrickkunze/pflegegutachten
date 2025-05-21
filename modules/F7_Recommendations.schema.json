@@ -1,0 +1,79 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "F7 – Empfehlungen zur Förderung oder zum Erhalt der Selbständigkeit",
+  "type": "object",
+  "description": "Empfehlungen zu therapeutischen, präventiven, edukativen, technischen oder wohnumfeldverbessernden Maßnahmen über die bestehende Versorgung hinaus.",
+  "properties": {
+    "f7_1": {
+      "type": "object",
+      "description": "F7.1 – Empfehlungen zu Einzelmaßnahmen",
+      "properties": {
+        "mobilitaetSelbstversorgungHaushalt": {
+          "type": "array",
+          "description": "F7.1.1 – Empfehlungen für Mobilität, Selbstversorgung, Haushaltsführung",
+          "items": { "type": "string" }
+        },
+        "kognitionVerhaltenAlltag": {
+          "type": "array",
+          "description": "F7.1.2 – Empfehlungen zu Kognition, Verhalten, Alltag",
+          "items": { "type": "string" }
+        },
+        "krankheitsumgangTherapie": {
+          "type": "array",
+          "description": "F7.1.3 – Empfehlungen zum Umgang mit krankheits-/therapiebedingten Anforderungen",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "f7_2": {
+      "type": "object",
+      "description": "F7.2 – Einschätzung, ob Einzelmaßnahmen ausreichend sind",
+      "properties": {
+        "einzelmassnahmenAusreichend": {
+          "type": "boolean",
+          "description": "Sind die genannten Einzelmaßnahmen ausreichend und erfolgversprechend?"
+        },
+        "empfohleneEinzelmassnahmen": {
+          "type": "array",
+          "description": "Welche Einzelmaßnahmen (konkret) werden empfohlen?",
+          "items": { "type": "string" }
+        },
+        "aerztlicheAbklaerungEmpfohlen": {
+          "type": "boolean",
+          "description": "Wird empfohlen, dass die behandelnde Ärztin/der Arzt über weitere Maßnahmen entscheidet?"
+        }
+      }
+    },
+    "f7_3": {
+      "type": "object",
+      "description": "F7.3 – Empfehlung zur medizinischen Rehabilitation",
+      "properties": {
+        "rehabEmpfohlen": { "type": "boolean" },
+        "rehabform": {
+          "type": "string",
+          "enum": ["geriatrisch", "indikationsspezifisch", "keine"],
+          "description": "Empfohlene Form der Reha (wenn empfohlen)"
+        },
+        "durchfuehrungsform": {
+          "type": "string",
+          "enum": ["ambulant", "mobil", "stationaer", "keine"],
+          "description": "Empfohlene Durchführungsform"
+        },
+        "rehabziele": {
+          "type": "array",
+          "description": "Konkret benannte alltagsrelevante Rehabilitationsziele",
+          "items": { "type": "string" }
+        },
+        "rehabprognose": {
+          "type": "string",
+          "description": "Prognose zur Wirksamkeit einer medizinischen Reha (z. B. positiv, fraglich, negativ)"
+        },
+        "einwilligungVorhanden": {
+          "type": "boolean",
+          "description": "Liegt eine Einwilligung zur Weiterleitung an Kasse, Arzt, Angehörige vor?"
+        }
+      }
+    }
+  },
+  "required": ["f7_1", "f7_2", "f7_3"]
+}

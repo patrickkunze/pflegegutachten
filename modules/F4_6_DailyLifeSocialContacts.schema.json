@@ -1,0 +1,52 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "F4.6 – Modul 6: Gestaltung des Alltagslebens und sozialer Kontakte",
+  "type": "object",
+  "description": "Bewertung der Selbständigkeit bei Alltagsgestaltung, Planung und sozialer Interaktion.",
+  "properties": {
+    "gestaltungTagesablauf": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 3,
+      "description": "F4.6.1 – Gestaltung des Tagesablaufs und Anpassung an Veränderungen"
+    },
+    "ruhenUndSchlafen": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 3,
+      "description": "F4.6.2 – Ruhen und Schlafen"
+    },
+    "sichBeschaeftigen": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 3,
+      "description": "F4.6.3 – Sich beschäftigen"
+    },
+    "zukunftsplanung": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 3,
+      "description": "F4.6.4 – In die Zukunft gerichtete Planungen vornehmen"
+    },
+    "interaktionDirekt": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 3,
+      "description": "F4.6.5 – Interaktion mit Personen im direkten Kontakt"
+    },
+    "kontaktpflegeAussen": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 3,
+      "description": "F4.6.6 – Kontaktpflege zu Personen außerhalb des direkten Umfelds"
+    }
+  },
+  "required": [
+    "gestaltungTagesablauf",
+    "ruhenUndSchlafen",
+    "sichBeschaeftigen",
+    "zukunftsplanung",
+    "interaktionDirekt",
+    "kontaktpflegeAussen"
+  ]
+}

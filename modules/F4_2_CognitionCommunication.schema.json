@@ -1,0 +1,87 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "F4.2 – Modul 2: Kognitive und kommunikative Fähigkeiten",
+  "type": "object",
+  "description": "Erfassung der geistigen Fähigkeiten und Kommunikationsfähigkeit anhand standardisierter Kriterien.",
+  "properties": {
+    "erkennenPersonen": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 3,
+      "description": "F4.2.1 – Erkennen von Personen aus dem näheren Umfeld"
+    },
+    "oertlicheOrientierung": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 3,
+      "description": "F4.2.2 – Örtliche Orientierung"
+    },
+    "zeitlicheOrientierung": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 3,
+      "description": "F4.2.3 – Zeitliche Orientierung"
+    },
+    "erinnerung": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 3,
+      "description": "F4.2.4 – Erinnern an wesentliche Ereignisse oder Beobachtungen"
+    },
+    "mehrschrittigeHandlungen": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 3,
+      "description": "F4.2.5 – Steuern von mehrschrittigen Alltagshandlungen"
+    },
+    "alltagsEntscheidungen": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 3,
+      "description": "F4.2.6 – Treffen von Entscheidungen im Alltag"
+    },
+    "verstehenInformationen": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 3,
+      "description": "F4.2.7 – Verstehen von Sachverhalten und Informationen"
+    },
+    "gefahrenErkennen": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 3,
+      "description": "F4.2.8 – Erkennen von Risiken und Gefahren"
+    },
+    "beduerfnisMitteilen": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 3,
+      "description": "F4.2.9 – Mitteilen von elementaren Bedürfnissen"
+    },
+    "verstehenAufforderungen": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 3,
+      "description": "F4.2.10 – Verstehen von Aufforderungen"
+    },
+    "gespraechsteilnahme": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 3,
+      "description": "F4.2.11 – Beteiligen an einem Gespräch"
+    }
+  },
+  "required": [
+    "erkennenPersonen",
+    "oertlicheOrientierung",
+    "zeitlicheOrientierung",
+    "erinnerung",
+    "mehrschrittigeHandlungen",
+    "alltagsEntscheidungen",
+    "verstehenInformationen",
+    "gefahrenErkennen",
+    "beduerfnisMitteilen",
+    "verstehenAufforderungen",
+    "gespraechsteilnahme"
+  ]
+}

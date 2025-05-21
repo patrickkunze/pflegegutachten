@@ -1,0 +1,83 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "F2 – Gutachterlicher Befund",
+  "type": "object",
+  "description": "Ergebnisse der direkten Begutachtung der antragstellenden Person durch Beobachtung, Gespräch und einfache Tests.",
+  "properties": {
+    "assessmentMethod": {
+      "type": "string",
+      "description": "Art der Begutachtung (z. B. Beobachtung, Gespräch, Demonstration von Alltagshandlungen)"
+    },
+    "observationContext": {
+      "type": "object",
+      "description": "Beobachtungssituation bei Eintreffen der Gutachterin/des Gutachters",
+      "properties": {
+        "arrivalSituation": { "type": "string", "description": "z. B. öffnet selbst die Tür, liegt im Bett" },
+        "contactPossible": { "type": "boolean", "description": "War eine sinnvolle Kommunikation möglich?" },
+        "conversationParticipation": { "type": "string", "description": "z. B. antwortet nachvollziehbar, erfasst Aufforderungen" },
+        "moodAndBehavior": { "type": "string", "description": "Stimmungslage, Antrieb, kognitive Auffälligkeiten" }
+      }
+    },
+    "functionalFindings": {
+      "type": "object",
+      "description": "Ergebnisse der körperlichen und funktionellen Begutachtung",
+      "properties": {
+        "nutritionStatus": {
+          "type": "object",
+          "properties": {
+            "heightCm": { "type": "number" },
+            "weightKg": { "type": "number" }
+          }
+        },
+        "muscularCondition": { "type": "string", "description": "z. B. Händedruck, Gangbild, Kraft" },
+        "hygieneStatus": { "type": "string", "description": "Pflege- und Hygienestatus" },
+        "additionalImpairments": {
+          "type": "array",
+          "description": "Weitere auffällige Befunde, z. B. Tremor, Luftnot",
+          "items": { "type": "string" }
+        },
+        "compensatoryResources": {
+          "type": "string",
+          "description": "Hilfsmittel oder Fähigkeiten zur Kompensation von Einschränkungen"
+        }
+      }
+    },
+    "limitationsOfExamination": {
+      "type": "string",
+      "description": "Wenn die Untersuchung aufgrund z. B. Schmerz oder Verhaltensstörung nicht vollständig möglich war"
+    },
+    "rehabilitationReview": {
+      "type": "string",
+      "description": "Beurteilung des Erfolgs bisheriger Rehabilitations- oder Pflegemaßnahmen (z. B. bei Höherstufung)"
+    },
+    "summaryImpression": {
+      "type": "string",
+      "description": "Gesamteindruck zur Selbständigkeit und den Fähigkeiten der antragstellenden Person"
+    },
+    "justificationForAssessmentChange": {
+      "type": "string",
+      "description": "Begründung einer ggf. abweichenden Bewertung gegenüber vorheriger Einschätzung"
+    },
+    "freedomRestrictingMeasures": {
+      "type": "object",
+      "description": "Festgestellte oder berichtete freiheitsentziehende Maßnahmen",
+      "properties": {
+        "measuresObserved": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "z. B. Fixierung, Sedierung, Bettgitter"
+        },
+        "voluntaryUseDocumented": {
+          "type": "boolean",
+          "description": "Beruhen Maßnahmen auf Wunsch der einsichtsfähigen Person?"
+        }
+      }
+    }
+  },
+  "required": [
+    "assessmentMethod",
+    "observationContext",
+    "functionalFindings",
+    "summaryImpression"
+  ]
+}

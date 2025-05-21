@@ -1,0 +1,63 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "F8 – Weitere Empfehlungen und Hinweise für die Pflegekasse",
+  "type": "object",
+  "description": "Zusätzliche Hinweise und Empfehlungen für die Pflegekasse zur Sicherung, Unterstützung und Stabilisierung der häuslichen Versorgung.",
+  "properties": {
+    "hilfsmittelEmpfehlungen": {
+      "type": "array",
+      "description": "F8.1 – Hilfsmittel und Pflegehilfsmittel",
+      "items": { "type": "string" }
+    },
+    "heilmittelEmpfehlungen": {
+      "type": "array",
+      "description": "F8.2 – Heilmittel und sonstige therapeutische Maßnahmen",
+      "items": { "type": "string" }
+    },
+    "wohnumfeldVerbesserungen": {
+      "type": "array",
+      "description": "F8.3 – Wohnumfeldverbessernde Maßnahmen",
+      "items": { "type": "string" }
+    },
+    "edukativeMassnahmen": {
+      "type": "array",
+      "description": "F8.4 – Information, Schulung, Beratung, Anleitung",
+      "items": { "type": "string" }
+    },
+    "praeventiveMassnahmen": {
+      "type": "array",
+      "description": "F8.5 – Präventive Maßnahmen",
+      "items": { "type": "string" }
+    },
+    "beratungPrimärpraevention": {
+      "type": "object",
+      "description": "F8.6 – Beratung zur verhaltensbezogenen Primärprävention nach § 20 Abs. 4 Nr. 1 SGB V",
+      "properties": {
+        "bewegung": { "type": "boolean" },
+        "ernaehrung": { "type": "boolean" },
+        "stressmanagement": { "type": "boolean" },
+        "suchtmittelkonsum": { "type": "boolean" }
+      }
+    },
+    "veraenderungPflegesituation": {
+      "type": "string",
+      "description": "F8.7 – Empfehlung zur Veränderung der Pflegesituation, z. B. Pflegeberatung nach § 7a SGB XI"
+    },
+    "beratungZurRehaUmsetzung": {
+      "type": "boolean",
+      "description": "F8.8 – Empfehlung zur Beratung über Umsetzung einer Reha-Leistung"
+    },
+    "widerspruchUebersendungGutachten": {
+      "type": "boolean",
+      "description": "F8.9 – Widerspricht die antragstellende Person der Übersendung des Gutachtens?"
+    },
+    "sonstigeHinweise": {
+      "type": "string",
+      "description": "F8.10 – Weitere Hinweise an die Pflegekasse (Freitext)"
+    }
+  },
+  "required": [
+    "beratungZurRehaUmsetzung",
+    "widerspruchUebersendungGutachten"
+  ]
+}

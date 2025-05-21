@@ -1,0 +1,40 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "F9 – Prognose / Wiederholungsbegutachtung",
+  "type": "object",
+  "description": "Einschätzung zur prognostischen Entwicklung der gesundheitlich bedingten Beeinträchtigungen und Empfehlung zur Wiederholungsbegutachtung.",
+  "properties": {
+    "prognose": {
+      "type": "string",
+      "enum": [
+        "stabile Beeinträchtigung",
+        "wahrscheinliche Verbesserung",
+        "wahrscheinliche Verschlechterung",
+        "keine belastbare Prognose möglich"
+      ],
+      "description": "Einschätzung zur weiteren Entwicklung der Selbständigkeit"
+    },
+    "begruendungPrognose": {
+      "type": "string",
+      "description": "Begründung der Prognose (z. B. Krankheitsverlauf, therapeutische Maßnahmen, Reha etc.)"
+    },
+    "wiederholungsbegutachtungErforderlich": {
+      "type": "boolean",
+      "description": "Soll eine Wiederholungsbegutachtung empfohlen werden?"
+    },
+    "terminWiederholung": {
+      "type": "string",
+      "format": "date",
+      "description": "Vorgeschlagenes Datum für eine erneute Begutachtung (sofern empfohlen)"
+    },
+    "hinweisHoeherstufungBeiVerschlechterung": {
+      "type": "boolean",
+      "description": "Hinweis auf Möglichkeit eines Höherstufungsantrags bei prognostischer Verschlechterung"
+    }
+  },
+  "required": [
+    "prognose",
+    "wiederholungsbegutachtungErforderlich",
+    "hinweisHoeherstufungBeiVerschlechterung"
+  ]
+}

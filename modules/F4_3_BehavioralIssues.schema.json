@@ -1,0 +1,101 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "F4.3 – Modul 3: Verhaltensweisen und psychische Problemlagen",
+  "type": "object",
+  "description": "Erfassung der Häufigkeit personellen Unterstützungsbedarfs aufgrund von Verhaltensweisen oder psychischen Problemlagen.",
+  "properties": {
+    "motorischeVerhaltensauffaelligkeiten": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 5,
+      "description": "F4.3.1 – Motorisch geprägte Verhaltensauffälligkeiten"
+    },
+    "naechtlicheUnruhe": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 5,
+      "description": "F4.3.2 – Nächtliche Unruhe"
+    },
+    "selbstschaedigendesVerhalten": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 5,
+      "description": "F4.3.3 – Selbstschädigendes und autoaggressives Verhalten"
+    },
+    "gegenstaendeBeschaedigen": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 5,
+      "description": "F4.3.4 – Beschädigen von Gegenständen"
+    },
+    "physischAggressiv": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 5,
+      "description": "F4.3.5 – Physisch aggressives Verhalten gegenüber anderen Personen"
+    },
+    "verbaleAggression": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 5,
+      "description": "F4.3.6 – Verbale Aggression"
+    },
+    "vokaleAuffaelligkeiten": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 5,
+      "description": "F4.3.7 – Andere pflegerelevante vokale Auffälligkeiten"
+    },
+    "abwehrPflegeMassnahmen": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 5,
+      "description": "F4.3.8 – Abwehr pflegerischer und anderer unterstützender Maßnahmen"
+    },
+    "wahnvorstellungen": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 5,
+      "description": "F4.3.9 – Wahnvorstellungen"
+    },
+    "aengste": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 5,
+      "description": "F4.3.10 – Ängste"
+    },
+    "antriebslosigkeit": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 5,
+      "description": "F4.3.11 – Antriebslosigkeit bei depressiver Stimmungslage"
+    },
+    "sozialInadaequat": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 5,
+      "description": "F4.3.12 – Sozial inadäquate Verhaltensweisen"
+    },
+    "sonstigeInadaequateHandlungen": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 5,
+      "description": "F4.3.13 – Sonstige pflegerelevante inadäquate Handlungen"
+    }
+  },
+  "required": [
+    "motorischeVerhaltensauffaelligkeiten",
+    "naechtlicheUnruhe",
+    "selbstschaedigendesVerhalten",
+    "gegenstaendeBeschaedigen",
+    "physischAggressiv",
+    "verbaleAggression",
+    "vokaleAuffaelligkeiten",
+    "abwehrPflegeMassnahmen",
+    "wahnvorstellungen",
+    "aengste",
+    "antriebslosigkeit",
+    "sozialInadaequat",
+    "sonstigeInadaequateHandlungen"
+  ]
+}

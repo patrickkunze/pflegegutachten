@@ -1,0 +1,87 @@
+{
+  "version": "1.0",
+  "title": "Pflegebegutachtung – Strukturierte JSON-Schemata gemäß BRi",
+  "description": "Verzeichnis aller Schemata zur strukturierten Abbildung des Begutachtungsinstruments gemäß den Begutachtungsrichtlinien (BRi) vom 21.08.2024.",
+  "schemas": [
+    {
+      "id": "CareAssessmentReport",
+      "title": "Gesamtgutachten Pflegebegutachtung",
+      "path": "CareAssessmentReport.schema.json"
+    },
+    {
+      "id": "F1_PreviousCareSituation",
+      "title": "F1 – Pflegerelevante Vorgeschichte und Versorgung",
+      "path": "modules/F1_PreviousCareSituation.schema.json"
+    },
+    {
+      "id": "F2_Findings",
+      "title": "F2 – Gutachterlicher Befund",
+      "path": "modules/F2_Findings.schema.json"
+    },
+    {
+      "id": "F3_Diagnosis",
+      "title": "F3 – Pflegebegründende Diagnosen",
+      "path": "modules/F3_Diagnosis.schema.json"
+    },
+    {
+      "id": "F4_Modules",
+      "title": "F4 – Module des Begutachtungsinstruments",
+      "path": "modules/F4_Modules.schema.json"
+    },
+    {
+      "id": "F4_1_Mobility",
+      "title": "F4.1 – Modul 1: Mobilität",
+      "path": "modules/F4_1_Mobility.schema.json"
+    },
+    {
+      "id": "F4_2_CognitionCommunication",
+      "title": "F4.2 – Modul 2: Kognition und Kommunikation",
+      "path": "modules/F4_2_CognitionCommunication.schema.json"
+    },
+    {
+      "id": "F4_3_BehavioralIssues",
+      "title": "F4.3 – Modul 3: Verhalten und psychische Problemlagen",
+      "path": "modules/F4_3_BehavioralIssues.schema.json"
+    },
+    {
+      "id": "F4_4_SelfCare",
+      "title": "F4.4 – Modul 4: Selbstversorgung",
+      "path": "modules/F4_4_SelfCare.schema.json"
+    },
+    {
+      "id": "F4_5_TherapyManagement",
+      "title": "F4.5 – Modul 5: Krankheits- oder therapiebedingte Anforderungen",
+      "path": "modules/F4_5_TherapyManagement.schema.json"
+    },
+    {
+      "id": "F4_6_DailyLifeSocialContacts",
+      "title": "F4.6 – Modul 6: Alltagsleben und soziale Kontakte",
+      "path": "modules/F4_6_DailyLifeSocialContacts.schema.json"
+    },
+    {
+      "id": "F5_AssessmentResult",
+      "title": "F5 – Ergebnis der Begutachtung",
+      "path": "modules/F5_AssessmentResult.schema.json"
+    },
+    {
+      "id": "F6_AdditionalNeeds",
+      "title": "F6 – Weitere versorgungsrelevante Informationen",
+      "path": "modules/F6_AdditionalNeeds.schema.json"
+    },
+    {
+      "id": "F7_Recommendations",
+      "title": "F7 – Empfehlungen zur Förderung oder zum Erhalt der Selbständigkeit",
+      "path": "modules/F7_Recommendations.schema.json"
+    },
+    {
+      "id": "F8_InsuranceAdvice",
+      "title": "F8 – Weitere Hinweise an die Pflegekasse",
+      "path": "modules/F8_InsuranceAdvice.schema.json"
+    },
+    {
+      "id": "F9_Prognosis",
+      "title": "F9 – Prognose / Wiederholungsbegutachtung",
+      "path": "modules/F9_Prognosis.schema.json"
+    }
+  ]
+}

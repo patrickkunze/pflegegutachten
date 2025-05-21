@@ -1,0 +1,54 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "F6 – Weitere versorgungsrelevante Informationen",
+  "type": "object",
+  "description": "Dokumentation zur außerhäuslichen Mobilität und Haushaltsführung (nicht pflegegradrelevant, aber versorgungsrelevant).",
+  "properties": {
+    "ausserhaeuslicheAktivitaeten": {
+      "type": "object",
+      "description": "F6.1 – Außerhäusliche Aktivitäten",
+      "properties": {
+        "verlassenWohnung": { "type": "string", "enum": ["selbstaendig", "nicht_selbstaendig"] },
+        "fortbewegen500m": { "type": "string", "enum": ["selbstaendig", "nicht_selbstaendig"] },
+        "nutzenNahverkehr": { "type": "string", "enum": ["selbstaendig", "nicht_selbstaendig"] },
+        "mitfahrenAuto": { "type": "string", "enum": ["selbstaendig", "nicht_selbstaendig"] },
+        "teilnahmeVeranstaltungen": { "type": "string", "enum": ["selbstaendig", "nicht_selbstaendig"] },
+        "besuchArbeitEinrichtung": { "type": "string", "enum": ["selbstaendig", "nicht_selbstaendig"] },
+        "teilnahmeSozialeAktivitaeten": { "type": "string", "enum": ["selbstaendig", "nicht_selbstaendig"] },
+        "besondereWuensche": { "type": "string", "description": "Optional: spezielle Wünsche zur Mobilität/Teilhabe" }
+      },
+      "required": [
+        "verlassenWohnung",
+        "fortbewegen500m",
+        "nutzenNahverkehr",
+        "mitfahrenAuto",
+        "teilnahmeVeranstaltungen",
+        "besuchArbeitEinrichtung",
+        "teilnahmeSozialeAktivitaeten"
+      ]
+    },
+    "haushaltsfuehrung": {
+      "type": "object",
+      "description": "F6.2 – Haushaltsführung",
+      "properties": {
+        "einkaufen": { "type": "string", "enum": ["selbstaendig", "nicht_selbstaendig"] },
+        "zubereitungMahlzeiten": { "type": "string", "enum": ["selbstaendig", "nicht_selbstaendig"] },
+        "einfacheReinigung": { "type": "string", "enum": ["selbstaendig", "nicht_selbstaendig"] },
+        "aufwendigeReinigung": { "type": "string", "enum": ["selbstaendig", "nicht_selbstaendig"] },
+        "dienstleistungsorganisation": { "type": "string", "enum": ["selbstaendig", "nicht_selbstaendig"] },
+        "umgangFinanzen": { "type": "string", "enum": ["selbstaendig", "nicht_selbstaendig"] },
+        "umgangBehoerden": { "type": "string", "enum": ["selbstaendig", "nicht_selbstaendig"] }
+      },
+      "required": [
+        "einkaufen",
+        "zubereitungMahlzeiten",
+        "einfacheReinigung",
+        "aufwendigeReinigung",
+        "dienstleistungsorganisation",
+        "umgangFinanzen",
+        "umgangBehoerden"
+      ]
+    }
+  },
+  "required": ["ausserhaeuslicheAktivitaeten", "haushaltsfuehrung"]
+}

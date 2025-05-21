@@ -1,0 +1,40 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "F4 – Module des Begutachtungsinstruments",
+  "type": "object",
+  "description": "Zusammenführung der sechs Bewertungsmodule gemäß §§ 14, 15 SGB XI zur Feststellung der Pflegebedürftigkeit.",
+  "properties": {
+    "modul1_mobilitaet": {
+      "$ref": "./F4_1_Mobility.schema.json",
+      "description": "F4.1 – Mobilität"
+    },
+    "modul2_kognition_kommunikation": {
+      "$ref": "./F4_2_CognitionCommunication.schema.json",
+      "description": "F4.2 – Kognitive und kommunikative Fähigkeiten"
+    },
+    "modul3_verhalten_psychisch": {
+      "$ref": "./F4_3_BehavioralIssues.schema.json",
+      "description": "F4.3 – Verhaltensweisen und psychische Problemlagen"
+    },
+    "modul4_selbstversorgung": {
+      "$ref": "./F4_4_SelfCare.schema.json",
+      "description": "F4.4 – Selbstversorgung"
+    },
+    "modul5_therapieumgang": {
+      "$ref": "./F4_5_TherapyManagement.schema.json",
+      "description": "F4.5 – Krankheits- oder therapiebedingte Anforderungen"
+    },
+    "modul6_alltag_soziales": {
+      "$ref": "./F4_6_DailyLifeSocialContacts.schema.json",
+      "description": "F4.6 – Gestaltung des Alltagslebens und sozialer Kontakte"
+    }
+  },
+  "required": [
+    "modul1_mobilitaet",
+    "modul2_kognition_kommunikation",
+    "modul3_verhalten_psychisch",
+    "modul4_selbstversorgung",
+    "modul5_therapieumgang",
+    "modul6_alltag_soziales"
+  ]
+}

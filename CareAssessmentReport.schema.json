@@ -1,0 +1,124 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Pflegebegutachtung – Formulargutachten für Erwachsene",
+  "type": "object",
+  "description": "Strukturiertes Gutachten zur Feststellung der Pflegebedürftigkeit gemäß SGB XI",
+  "properties": {
+    "metadata": {
+      "type": "object",
+      "description": "Angaben zur Struktur des Gutachtens und beteiligten Rollen",
+      "properties": {
+        "structure": {
+          "type": "string",
+          "enum": ["Abschnitt 1: Erhebung", "Abschnitt 2: Wertung", "Abschnitt 3: Empfehlungen"],
+          "description": "Gliederung des Gutachtens nach Erhebung, Wertung und Empfehlungen"
+        },
+        "roleDefinitions": {
+          "type": "object",
+          "description": "Definitionen pflegender Personen und Einrichtungen gemäß § 71 SGB XI",
+          "properties": {
+            "pflegeperson": {
+              "type": "string",
+              "description": "Nicht erwerbsmäßig pflegende Person gemäß § 14, § 44 SGB XI"
+            },
+            "pflegekraft": {
+              "type": "string",
+              "description": "Erwerbsmäßig tätige Pflegeperson"
+            },
+            "ambulanteEinrichtung": {
+              "type": "string",
+              "description": "Ambulanter Pflegedienst gemäß § 71 Abs. 1 SGB XI"
+            },
+            "stationaereEinrichtung": {
+              "type": "string",
+              "description": "Stationäre Pflegeeinrichtung gemäß § 71 Abs. 2 SGB XI"
+            }
+          },
+          "required": ["pflegeperson", "pflegekraft", "ambulanteEinrichtung", "stationaereEinrichtung"]
+        }
+      },
+      "required": ["structure", "roleDefinitions"]
+    },
+    "caseInfo": {
+      "$ref": "./modules/CaseInformation.schema.json"
+    },
+    "delaysOrInterruptions": {
+      "type": "object",
+      "description": "Erfasste Gründe für Verzögerung oder Abbruch der Begutachtung",
+      "properties": {
+        "delayReasons": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "Krankenhaus-/Rehaaufenthalt",
+              "Behandlungstermin",
+              "Terminabsage",
+              "Umzug",
+              "Auslandswohnsitz",
+              "Tod",
+              "Nicht erreichbar",
+              "Gewaltandrohung",
+              "Schwerwiegende Gründe",
+              "Verständigungsprobleme",
+              "Fehlende Unterlagen"
+            ]
+          }
+        },
+        "interruptionDetails": {
+          "type": "string",
+          "description": "Freitextbegründung für Abbruch oder Unterbrechung der Begutachtung"
+        },
+        "assessmentAppointment": {
+          "type": "object",
+          "properties": {
+            "date": { "type": "string", "format": "date" },
+            "location": { "type": "string" },
+            "time": { "type": "string", "pattern": "^[0-2][0-9]:[0-5][0-9]$" }
+          },
+          "required": ["date", "location"]
+        }
+      }
+    },
+    "historyAndContext": {
+      "$ref": "./modules/F1_PreviousCareSituation.schema.json"
+    },
+    "findings": {
+      "$ref": "./modules/F2_Findings.schema.json"
+    },
+    "diagnosis": {
+      "$ref": "./modules/F3_Diagnosis.schema.json"
+    },
+    "assessmentModules": {
+      "$ref": "./modules/F4_Modules.schema.json"
+    },
+    "assessmentResult": {
+      "$ref": "./modules/F5_Result.schema.json"
+    },
+    "furtherNeeds": {
+      "$ref": "./modules/F6_AdditionalNeeds.schema.json"
+    },
+    "recommendations": {
+      "$ref": "./modules/F7_Recommendations.schema.json"
+    },
+    "insurerAdvice": {
+      "$ref": "./modules/F8_InsuranceAdvice.schema.json"
+    },
+    "prognosis": {
+      "$ref": "./modules/F9_Prognosis.schema.json"
+    }
+  },
+  "required": [
+    "metadata",
+    "caseInfo",
+    "historyAndContext",
+    "findings",
+    "diagnosis",
+    "assessmentModules",
+    "assessmentResult",
+    "furtherNeeds",
+    "recommendations",
+    "insurerAdvice",
+    "prognosis"
+  ]
+}

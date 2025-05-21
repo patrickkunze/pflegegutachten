@@ -1,0 +1,112 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "F1 – Pflegerelevante Vorgeschichte und derzeitige Versorgungssituation",
+  "type": "object",
+  "properties": {
+    "personsPresent": {
+      "type": "array",
+      "description": "Anwesende Personen bei der Begutachtung (Pflegeperson, Angehörige etc.)",
+      "items": { "type": "string" }
+    },
+    "consentDocumented": {
+      "type": "boolean",
+      "description": "Einverständnis zur Einbeziehung Dritter (z. B. Pflegepersonen, Dienste) dokumentiert?"
+    },
+    "divergingStatements": {
+      "type": "boolean",
+      "description": "Abweichende Angaben zwischen Antragsteller*in und Pflegeperson festgestellt?"
+    },
+    "f1_1_foreignFindings": {
+      "type": "array",
+      "description": "Liste relevanter Fremdbefunde (z. B. Arztberichte, Pflegetagebuch)",
+      "items": {
+        "type": "object",
+        "properties": {
+          "type": { "type": "string", "description": "Art des Dokuments (z. B. Reha-Bericht, Pflegetagebuch)" },
+          "source": { "type": "string", "description": "Herkunft (z. B. Einrichtung, Facharzt)" },
+          "summary": { "type": "string", "description": "Zusammenfassung relevanter Inhalte" }
+        },
+        "required": ["type", "source"]
+      }
+    },
+    "f1_2_medicalHistory": {
+      "type": "object",
+      "description": "Anamnese und pflegerelevante Angaben",
+      "properties": {
+        "healthProblems": { "type": "string", "description": "Subjektive Problembeschreibung" },
+        "diseaseProgression": { "type": "string", "description": "Beginn und Verlauf der Pflegeursachen" },
+        "cognitiveIssues": { "type": "string", "description": "Einschätzung zu Kognition / herausforderndem Verhalten" },
+        "rehabHistory": {
+          "type": "object",
+          "properties": {
+            "past4Years": { "type": "string", "description": "Art und Form (ambulant/stationär, geriatrisch etc.)" },
+            "past12Months": { "type": "string", "description": "Reha im letzten Jahr – separat aufführen" },
+            "applicationStatus": { "type": "string", "description": "Wurde Reha beantragt oder bewilligt?" }
+          }
+        },
+        "changeSinceLastAssessment": {
+          "type": "string",
+          "description": "Veränderung der Selbständigkeit im Vergleich zur Vorbegutachtung"
+        }
+      }
+    },
+    "f1_3_assistiveDevices": {
+      "type": "array",
+      "description": "Liste vorhandener Hilfsmittel und Pflegehilfsmittel",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string" },
+          "used": { "type": "boolean", "description": "Wird das Hilfsmittel genutzt?" },
+          "comment": { "type": "string" }
+        },
+        "required": ["name", "used"]
+      }
+    },
+    "f1_4_careAndLivingSituation": {
+      "type": "object",
+      "description": "Beschreibung der Versorgung und Wohnsituation",
+      "properties": {
+        "livingSetting": {
+          "type": "string",
+          "enum": [
+            "alleinlebend",
+            "mit anderen Personen",
+            "ambulant betreute Wohngruppe",
+            "vollstationäre Einrichtung",
+            "vollstationäre Einrichtung §43a SGB XI"
+          ]
+        },
+        "daytimeCare": {
+          "type": "string",
+          "description": "Pflege/Beratung in strukturierenden Einrichtungen (z. B. Werkstatt, Schule)"
+        },
+        "careProvision": {
+          "type": "array",
+          "description": "Versorgungszeiten und -leistungen",
+          "items": {
+            "type": "object",
+            "properties": {
+              "provider": { "type": "string" },
+              "typeOfCare": { "type": "string" },
+              "daysPerWeek": { "type": "integer" },
+              "hoursPerWeek": { "type": "number" }
+            }
+          }
+        },
+        "housingDescription": {
+          "type": "string",
+          "description": "Wohnumfeldbeschreibung (Barrieren, Zugänglichkeit, Ausstattung)"
+        }
+      }
+    }
+  },
+  "required": [
+    "personsPresent",
+    "consentDocumented",
+    "f1_1_foreignFindings",
+    "f1_2_medicalHistory",
+    "f1_3_assistiveDevices",
+    "f1_4_careAndLivingSituation"
+  ]
+}
